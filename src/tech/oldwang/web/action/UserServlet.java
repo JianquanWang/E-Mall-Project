@@ -23,6 +23,8 @@ public class UserServlet extends HttpServlet {
 		String methodName = request.getParameter("method");
 		if("login".equals(methodName)) {
 			login(request, response);
+		}else if("logout".equals(methodName)) {
+			logout(request, response);
 		}
 	}
 	/**
@@ -54,6 +56,18 @@ public class UserServlet extends HttpServlet {
 			request.getSession().setAttribute("existUser", existUser);
 			response.sendRedirect(request.getContextPath()+"/admin/category_list.jsp");
 		}
+	}
+	/**
+	 * Log out
+	 * @param request
+	 * @param response
+	 * @throws IOException 
+	 */
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// 1. destroy session
+		request.getSession().invalidate();
+		// 2. Redirect to login page
+		response.sendRedirect(request.getContextPath()+"/admin/login.jsp");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

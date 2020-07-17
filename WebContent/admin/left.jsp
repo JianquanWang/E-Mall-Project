@@ -4,46 +4,46 @@
         <div class="sidebar-left-content nano-content">
             <ul class="nav sidebar-menu">
                 
-                <li class="sidebar-label pt15">油画管理</li>
+                <li class="sidebar-label pt15">My E-mall</li>
                 <li>
                     <a href="#">
                         <span class="glyphicon glyphicon-home"></span>
-                        <span class="sidebar-title">商品管理</span>
+                        <span class="sidebar-title">Commodity management</span>
                         <span class="caret"></span>
                     </a>
                     <ul class="nav sub-nav">
                         <li>
                             <a href="goods_list.html">
-                                <span class="glyphicon glyphicon-calendar"></span> 商品列表 </a>
+                                <span class="glyphicon glyphicon-calendar"></span> Commodity list </a>
                         </li>
                         <li>
                             <a href="goods_add.html">
-                                <span class="glyphicon glyphicon-check"></span> 添加商品 </a>
+                                <span class="glyphicon glyphicon-check"></span> Add commodity </a>
                         </li>
 						<li>
                             <a href="goods_update.html">
-                                <span class="glyphicon glyphicon-check"></span> 修改商品 </a>
+                                <span class="glyphicon glyphicon-check"></span> Edit commodity </a>
                         </li>
                     </ul>
                 </li>
 				<li>
                     <a href="#">
                         <span class="glyphicon glyphicon-home"></span>
-                        <span class="sidebar-title">分类管理</span>
+                        <span class="sidebar-title">Category management</span>
                         <span class="caret"></span>
                     </a>
                     <ul class="nav sub-nav">
                         <li>
                             <a href="${pageContext.request.contextPath }/CategoryServlet?method=findAll">
-                                <span class="glyphicon glyphicon-calendar"></span> 分类列表 </a>
+                                <span class="glyphicon glyphicon-calendar"></span> Category list </a>
                         </li>
                         <li>
                             <a href="${pageContext.request.contextPath }/CategoryServlet?method=saveUI">
-                                <span class="glyphicon glyphicon-check"></span> 添加分类 </a>
+                                <span class="glyphicon glyphicon-check"></span> Add category </a>
                         </li>
 						<li>
                             <a href="${pageContext.request.contextPath }/CategoryServlet?method=updateUI">
-                                <span class="glyphicon glyphicon-check"></span> 修改列表 </a>
+                                <span class="glyphicon glyphicon-check"></span> Edit category </a>
                         </li>
                     </ul>
                 </li>

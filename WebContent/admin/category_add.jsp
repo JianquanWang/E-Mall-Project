@@ -9,7 +9,7 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
 
-<title>油画商城--添加分类</title>
+<title>My E-mall--Add category</title>
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/skin/default_skin/css/theme.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/admin-tools/admin-forms/css/admin-forms.css">
@@ -26,15 +26,16 @@
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
         <div class="content-header">
-            <h2> 添加分类 </h2>
+            <h2> Add category </h2>
             <p class="lead"></p>
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
             <div class="panel heading-border">
-                <form id="admin-form" name="addForm" action="/department/add" method="post">
+                <form id="admin-form" name="addForm" action="${pageContext.request.contextPath }/CategoryServlet" method="post">
+                <input type="hidden" name="method" value="save">
                     <div class="panel-body bg-light">
                         <div class="section-divider mt20 mb40">
-                            <span> 基本信息 </span>
+                            <span> Basic information </span>
                         </div>
                         <div class="section row">
                            
@@ -43,13 +44,13 @@
 							<div class="col-md-1">
                                 <label for="sn" class="field prepend-icon">
                                     <label for="sn" class="field-icon">
-										名称
+										Name
                                     </label>
                                 </label>
                             </div>
                             <div class="col-md-6">
                                 <label for="sn" class="field">
-                                    <input id="sn" name="sn" class="gui-input" placeholder="名称" type="text" value="imooc"/>
+                                    <input id="sn" name="cname" class="gui-input" placeholder="name" type="text" value="imooc"/>
                                 </label>
                             </div>
                         </div>
@@ -59,19 +60,19 @@
 							<div class="col-md-1">
                                 <label for="sn" class="field prepend-icon">
                                     <label for="sn" class="field-icon">
-										描述
+										Description
                                     </label>
                                 </label>
                             </div>
 							<div class="col-md-6">
 								<label for="address" class="field">
-									<input id="address" name="address" class="gui-input" placeholder="描述" type="text" value=""/>
+									<input id="address" name="cdesc" class="gui-input" placeholder="description" type="text" value=""/>
 								</label>
 							</div>
                         </div>
                         <div class="panel-footer text-center">
-                            <button type="submit" class="button"> 保存 </button>
-                            <button type="button" class="button" onclick="javascript:window.history.go(-1);"> 返回 </button>
+                            <button type="submit" class="button"> Save</button>
+                            <button type="button" class="button" onclick="javascript:window.history.go(-1);"> Cancel </button>
                         </div>
                     </div>
                 </form>

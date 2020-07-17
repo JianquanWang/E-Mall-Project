@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -10,11 +10,16 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
 
-<title> 油画商城--分类列表 </title>
+<title> My E-mall--Category List </title>
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/skin/default_skin/css/theme.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/admin-tools/admin-forms/css/admin-forms.css">
 <link rel="shortcut icon" href="${pageContext.request.contextPath }/assets/img/favicon.ico">
+<script type="text/javascript">
+	function saveUI(){
+		window.location.href="${pageContext.request.getContextPath}/CategoryServlet?method=saveUI";
+	}
+</script>
 </head>
 
 <body class="admin-validation-page" data-spy="scroll" data-target="#nav-spy" data-offset="200">
@@ -27,7 +32,7 @@
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
         <div class="content-header">
-            <h2> 分类列表 </h2>
+            <h2> Category list </h2>
             <p class="lead"></p>
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
@@ -43,7 +48,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/employee/to_add';"></i>
+                                    <i class="fa fa-plus" onclick="saveUI()"></i>
                                 </button>
                             </div>
                         </div>
@@ -64,26 +69,23 @@
                         <thead>
                         <tr class="">
                             
-                            <th class="hidden-xs">名称</th>
+                            <th class="hidden-xs">Name</th>
                           
-                            <th class="hidden-xs">描述</th>
-                            <th>操作</th>
+                            <th class="hidden-xs">Description</th>
+                            <th>Operation</th>
                         </tr>
                         </thead>
                         <tbody>
-                        	
+                        	<c:forEach var="category" items="${list }">
                             <tr class="message-unread">
-                                <td>分类1</td>
-                            
+                                <td>${category.cname}</td>
+                                <td>${category.cdesc}</td>
                                 <td>
-									分类描述
-                                </td>
-                                <td>
-                                    <a href="#">编辑</a>
-                                    <a href="#">删除</a>
+                                    <a href="${pageContext.request.contextPath}/CategoryServlet?method=edit&cid=${category.cid }">Edit</a>
+                                    <a href="${pageContext.request.contextPath}/CategoryServlet?method=delete&cid=${category.cid }">Delete</a>
                                 </td>
                             </tr>
-                        	
+                        	</c:forEach>
                         </tbody>
                     </table>
                 </div>
