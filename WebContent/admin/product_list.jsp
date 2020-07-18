@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +10,7 @@
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
 
-<title> 油画商城--油画列表 </title>
+<title> My E-mall--product list </title>
 
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/skin/default_skin/css/theme.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/assets/admin-tools/admin-forms/css/admin-forms.css">
@@ -26,7 +27,7 @@
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
         <div class="content-header">
-            <h2> 商品列表 </h2>
+            <h2> Product list </h2>
             <p class="lead"></p>
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
@@ -63,29 +64,29 @@
                         <thead>
                         <tr class="">
                            
-                            <th class="hidden-xs">名称</th>
-                            <th class="hidden-xs">分类</th>
-                            <th class="hidden-xs">价格</th>
+                            <th class="hidden-xs">Name</th>
+                            <th class="hidden-xs">Category</th>
+                            <th class="hidden-xs">Price</th>
 					
-							<th class="hidden-xs">描述</th>
-							<th>操作</th>
+							<th class="hidden-xs">Description</th>
+							<th>Operation</th>
                         </tr>
                         </thead>
                         <tbody>
-                        
+                        	<c:forEach var="product" items="${list}">
                             <tr class="message-unread">
                                
-                                <td>无名女郎</td>
-                                <td>分类一</td>
-                                <td>88888</td>
+                                <td>${product.pname }</td>
+                                <td>${product.category.cname }</td>
+                                <td>${product.price}</td>
 						
-								<td>无名女郎相关描述</td>
+								<td>${product.description}</td>
                                 <td>
-                                    <a href="/department/to_update?sn=10001">编辑</a>
-                                    <a href="/department/remove?sn=10001">删除</a>
+                                    <a href="/department/to_update?sn=10001">Edit</a>
+                                    <a href="/department/remove?sn=10001">Delete</a>
                                 </td>
                             </tr>
-							
+							</c:forEach>
                         </tbody>
                     </table>
                 </div>

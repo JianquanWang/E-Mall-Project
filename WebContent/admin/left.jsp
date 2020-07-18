@@ -13,7 +13,7 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li>
-                            <a href="goods_list.html">
+                            <a href="${pageContext.request.contextPath}/ProductServlet?method=findAll">
                                 <span class="glyphicon glyphicon-calendar"></span> Commodity list </a>
                         </li>
                         <li>
